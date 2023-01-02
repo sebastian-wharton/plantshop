@@ -1,38 +1,28 @@
-import { render } from '@testing-library/react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, NavLink, ScrollRestoration } from 'react-router-dom';
 import Footer from '../components/Footer';
 
 const Layout = () => {
-	const toggleNav = () => {
-		render ()
-	};
-
 	return (
 		<>
-			<nav>
-				<button onClick={toggleNav}></button><h1>Plant Shop</h1>
-			</nav>
-			<div className='main'>
-				<Outlet />
+			<ScrollRestoration />
+			<header>
+				<nav>
+					<h1>Plant Shop</h1>
+					<NavLink to='/'>Home</NavLink>
+					<NavLink to='login'>Login</NavLink>
+					<NavLink to='Contact'>Contact</NavLink>
+					<NavLink to='Store'>Store</NavLink>
+					<NavLink to='Products'>Products</NavLink>
+					<NavLink to='NoPage'>NoPage</NavLink>
+				</nav>
+			</header>
+
+			<main>
+				<div className='page'>
+					<Outlet />
+				</div>
 				<Footer />
-				<ul>
-					<li>
-						<Link to='/'>Home</Link>
-					</li>
-					<li>
-						<Link to='/store'>Store</Link>
-					</li>
-					<li>
-						<Link to='/products'>Products</Link>
-					</li>
-					<li>
-						<Link to='/contact'>Contact</Link>
-					</li>
-					<li>
-						<Link to='/login'>Login</Link>
-					</li>
-				</ul>
-			</div>
+			</main>
 		</>
 	);
 };
