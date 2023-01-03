@@ -1,5 +1,8 @@
 {
 	"cSpell.ignoreWords": [
 		"Lorum"
-	]
+	],
+	"liveSassCompile.settings.watchOnLaunch": true,
+	"sassVariablesHelper.route": "\"sassVariablesHelper.route\": \"src\\index.scss\"",
+	"emmet.showSuggestionsAsSnippets": true
 }
